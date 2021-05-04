@@ -1,4 +1,6 @@
 import React from 'react';
+import {BrowserRouter as Router, Link, Switch, Route} from 'react-router-dom';
+import Details from './Details';
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
@@ -12,13 +14,16 @@ const setVoteClass = (vote) => {
   }
 }
 
+
 const MovieList = ({title, poster_path, overview, vote_average}) => {
   return (
     <div className = 'movie'>
+    <a href="/details">details</a>
       <img 
       src = {
         poster_path ? IMG_API + poster_path : "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"} 
       alt={title} />
+      
       <div className = 'movie-info'>
         <h3>{title}</h3>
         <span  className={`tag ${setVoteClass(vote_average)}`}>{vote_average}</span>
@@ -27,6 +32,7 @@ const MovieList = ({title, poster_path, overview, vote_average}) => {
         <h2>Overview: </h2>
         <p>{overview}</p>
       </div>
+      
     </div>
   )
 }

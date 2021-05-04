@@ -44,7 +44,7 @@ header {
 }
 
 .movie {
-  background-color: #373b69;
+  background-color: white;
   border-radius: 3px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -54,7 +54,7 @@ header {
 }
 
 .movie img {
-  object-fit: cover;
+  object-fit: fill;
   height: 400px;
   max-width: 100%;
 }
@@ -66,6 +66,7 @@ header {
 }
 
 .movie-info h3 {
+  color: #22254b;
   margin: 0;
 }
 

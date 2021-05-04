@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import {BrowserRouter as Router, Link, Switch, Route} from 'react-router-dom';
 import MovieList from './components/MovieList';
+import Details from './components/Details';
 
 //api = https://api.themoviedb.org/3/movie/550?api_key=a3dc722615792669aca8014deebeb79a
 //apiurl = https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a3dc722615792669aca8014deebeb79a&page=1
@@ -14,6 +16,7 @@ const SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=a3dc722615
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [language, setLanguage] = useState('');
 
   useEffect(() => {
     getMovies(FEATURED_API);
@@ -39,9 +42,21 @@ function App() {
     setSearchTerm(e.target.value);
   }
 
+  const changeLanguage = (e) => {
+    setLanguage(e.target.value)
+  }
+  
   return (
     <>
+    <Route to="/details" component={Details} />
     <header>
+      <form className="search">
+        <select value={language} onChange={changeLanguage}>
+          <option value="english">english</option>
+          <option value="german">german</option>
+          <option value="france">france</option>
+        </select>
+      </form>
       <form onSubmit={handleOnSubmit}>
         <input  className="search" type="text" placeholder="Search..." value={searchTerm} onChange={handleOnChange}/>
       </form>
