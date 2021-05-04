@@ -14,11 +14,10 @@ const setVoteClass = (vote) => {
   }
 }
 
-
 const MovieList = ({title, poster, overview, rating, id}) => {
   return (
     <div className = 'movie'>
-    <a href= {'/details/' + id} >
+    <a href= {'/details?id=' + id} >
       <img 
       src = { poster} 
       alt={title} />

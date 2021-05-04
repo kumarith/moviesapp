@@ -3,10 +3,12 @@ import {Container,Card,Button,FormControl,DropdownButton, Dropdown, Nav} from 'r
 
 
 const Details = () => {
-  const FEATURED_API = "http://localhost:4000/movie/:id"
+  let search = window.location.search;
+  let params = new URLSearchParams(search);
+  let id = params.get('id')
+  const FEATURED_API = "http://localhost:4000/movie/"+id
   const [movieDetails, setMovieDetails] = useState([]);
  
-
   useEffect(() => {
     getMoviesDetails(FEATURED_API);
   },[])
@@ -15,7 +17,6 @@ const Details = () => {
     fetch(API).then(res => res.json())
     .then(data => {
       console.log(data)
-      alert(data)
       setMovieDetails(data)})
   }
 
@@ -30,7 +31,7 @@ const Details = () => {
         <Card.Text><h5>Plot:</h5> {movieDetails.plot}</Card.Text>
         <Card.Text><h5>Location:</h5> {movieDetails.location}</Card.Text>
         <Card.Text><h5>Overview:</h5> {movieDetails.overview}</Card.Text>
-       <Button href="/movies" variant="primary">Go somewhere</Button>
+       <Button href="/movies" variant="primary">Back</Button>
      </Card.Body>
     </Card>
     </div>

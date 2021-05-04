@@ -27,8 +27,9 @@ function App() {
     e.preventDefault();
 
     if(searchTerm){
-      alert("calling")
-    getMovies("http://localhost:4000/movies?title_like="+searchTerm)
+    //getMovies("http://localhost:4000/movies/title/:title"+searchTerm)
+    getMovies(`http://localhost:4000/movies/title/${searchTerm}`);
+    console.log("searching title----"+searchTerm)
       setSearchTerm('');
     }
   }
@@ -38,7 +39,7 @@ function App() {
   }
 
   const changeLanguage = (e) => {
-    getMovies("http://localhost:3001/movies?language="+e)
+    getMovies("http://localhost:4000/movies/language/" +e)
   }
 
   /*const handleLanguage = (e) => {
@@ -71,6 +72,9 @@ function App() {
     <Dropdown.Item eventKey="danish">danish</Dropdown.Item>
     <Dropdown.Item eventKey="english">english</Dropdown.Item>
     <Dropdown.Item eventKey="hindi">hindi</Dropdown.Item>
+    <Dropdown.Item eventKey="dutch">dutch</Dropdown.Item>
+    <Dropdown.Item eventKey="french">french</Dropdown.Item>
+    <Dropdown.Item eventKey="spanish">spanish</Dropdown.Item>
     </DropdownButton>
 
     <FormControl  className="ml-auto" type="text" placeholder="Search" value={searchTerm} onChange={handleOnChange}  className="mr-sm-2" />

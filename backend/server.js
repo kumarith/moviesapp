@@ -12,7 +12,7 @@ JSON.filter = require('node-json-filter');
 const movies = [
   {
     "id": 1,
-    "title": "Mortal Kombat",
+    "title": "mortal kombat",
     "language": "english",
     "rating":7.8,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
@@ -22,7 +22,7 @@ const movies = [
   },
   {
     "id": 2,
-    "title": "Avengers",
+    "title": "avengers",
     "language": "danish",
     "rating":8.8,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
@@ -32,7 +32,7 @@ const movies = [
   },
   {
     "id": 3,
-    "title": "Shark",
+    "title": "shark",
     "language": "german",
     "rating":6.7,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
@@ -42,7 +42,7 @@ const movies = [
   },
   {
     "id": 4,
-    "title": "Flash",
+    "title": "flash",
     "language": "english",
     "rating":5,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
@@ -52,7 +52,7 @@ const movies = [
   },
   {
     "id": 5,
-    "title": "Nobody",
+    "title": "nobody",
     "language": "english",
     "rating":5.6,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
@@ -62,8 +62,8 @@ const movies = [
   },
   {
     "id": 6,
-    "title": "Big bang",
-    "language": "english",
+    "title": "big bang",
+    "language": "spanish",
     "rating":9,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
     "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
@@ -72,8 +72,8 @@ const movies = [
   },
   {
     "id": 7,
-    "title": "Universe",
-    "language": "French",
+    "title": "universe",
+    "language": "french",
     "rating":9,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
     "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
@@ -83,7 +83,7 @@ const movies = [
   {
     "id": 8,
     "title": "waterland",
-    "language": "Hindi",
+    "language": "hindi",
     "rating":6,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
     "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
@@ -92,7 +92,7 @@ const movies = [
   },
   {
     "id": 9,
-    "title": "Skyland",
+    "title": "skyland",
     "language": "english",
     "rating":9.9,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
@@ -103,7 +103,7 @@ const movies = [
   {
     "id": 10,
     "title": "wonderland",
-    "language": "english",
+    "language": "dutch",
     "rating":4,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
     "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
