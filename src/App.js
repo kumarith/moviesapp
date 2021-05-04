@@ -107,7 +107,7 @@ function App() {
      
     
     <Switch>  
-    <Route  path="/details"><Details /></Route>
+    <Route  path="/details">   <Details   />   </Route>
     <Route path="/"> 
     <div className="movie-container">
       {movies && movies.length > 0 && movies.map((movie) => (
