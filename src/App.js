@@ -48,24 +48,28 @@ function App() {
   
   return (
     <>
-    <Route to="/details" component={Details} />
     <header>
-      <form className="search">
-        <select value={language} onChange={changeLanguage}>
-          <option value="english">english</option>
-          <option value="german">german</option>
-          <option value="france">france</option>
+      <form >
+        <select className="filter" value={language} onChange={changeLanguage}>
+          <option  value="english">english</option>
+          <option  value="german">german</option>
+          <option  value="france">france</option>
         </select>
       </form>
       <form onSubmit={handleOnSubmit}>
         <input  className="search" type="text" placeholder="Search..." value={searchTerm} onChange={handleOnChange}/>
       </form>
     </header>
+    <Switch>  
+    <Route  path="/details"><Details /></Route>
+    <Route path="/"> 
     <div className="movie-container">
       {movies.length > 0 && movies.map((movie) => (
         <MovieList key = {movie.id} {...movie}/>
       ))}
     </div>
+    </Route>
+    </Switch>
     </>
   );
 }
