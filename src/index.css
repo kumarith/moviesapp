@@ -16,6 +16,13 @@ body {
   flex-direction: column;
 }
 
+.card {
+  position: relative;
+  display: flex;
+  margin: auto;
+  width: 50%;
+}
+
 header {
   background-color: #373b69;
   padding: 1rem;
