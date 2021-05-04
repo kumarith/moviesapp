@@ -1,10 +1,11 @@
+
 const express = require ("express");
 const bodyParser = require ("body-parser");
 const cors = require("cors");
-
 const app = express();
 JSON.filter = require('node-json-filter');
-//-------------------------------------------------movies data------------------------------------//
+
+
 
 const movies = [
   {
@@ -113,14 +114,15 @@ const movies = [
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(cors());
 app.use(express.json());
+
 
 app.get("/movies", (req, res) => {
   res.send(movies)
   console.log("json data from express server"+ movies)
 })
+
 
 app.get("/movie/:id", (req, res) => {
   const movie = movies.find(m => m.id === parseInt(req.params.id));
@@ -128,11 +130,13 @@ app.get("/movie/:id", (req, res) => {
   res.send(movie);
   })
 
+
 app.get("/movies/language/:lang", (req ,res) => {
   const  filtered_movies = movies.filter(function(x){return x.language==req.params.lang});
   console.log("here")
   res.send(filtered_movies);
 })
+
 
 app.get("/movies/title/:title", (req ,res) => {
   var filtered_movies = movies.filter(function(x){return x.title.includes(req.params.title) });
@@ -140,7 +144,7 @@ app.get("/movies/title/:title", (req ,res) => {
   res.send(filtered_movies);
 })
 
-//start express server on port 4000
+
 app.listen(4000, (req, res) => {
   console.log("server is running in port : 4000");
 });

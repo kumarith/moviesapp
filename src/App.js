@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {BrowserRouter as Router, Link, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Link, Switch, Route} from 'react-router-dom';
 import MovieList from './components/MovieList';
 import Details from './components/Details';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -67,8 +67,8 @@ function App() {
     <FormControl  className="ml-auto" type="text" placeholder="Search" value={searchTerm} onChange={handleOnChange}  className="mr-sm-2" />
     </Form>
     </Navbar>
-    <Switch>  
-    <Route  path="/details">   <Details   />   </Route>
+    <BrowserRouter>
+    <Route  path="/details"><Details/></Route>
     <Route path="/"> 
     <div className="movie-container">
       {movies && movies.length > 0 && movies.map((movie) => (
@@ -76,7 +76,8 @@ function App() {
       ))}
     </div>
     </Route>
-    </Switch>
+    </BrowserRouter>
+    
     </Container>
     </>
   );
