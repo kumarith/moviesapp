@@ -1,11 +1,17 @@
-
+/**
+ * Server side component that exposes APIs to search movies from Movie data.
+ * Kumari T
+ */
 const express = require ("express");
 const bodyParser = require ("body-parser");
 const cors = require("cors");
 const app = express();
 JSON.filter = require('node-json-filter');
 
-
+/**
+ * 
+ * Movies data - block can be repaced with MongoDB or any other nosql DB.
+ */
 
 const movies = [
   {
@@ -117,34 +123,46 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
 
-
+/**
+ * Route URI to list all Movies.
+ * Equivalent to findAll().
+ */
 app.get("/movies", (req, res) => {
   res.send(movies)
   console.log("json data from express server"+ movies)
 })
 
-
+/**
+ * Route URI to filter to speific movie based on id.
+ */
 app.get("/movie/:id", (req, res) => {
   const movie = movies.find(m => m.id === parseInt(req.params.id));
   if(!movie) res.status(404).send("The movie with the ID is NOT FOUND");
   res.send(movie);
   })
 
-
+/**
+ * Route URI path to filter to language.
+ */
 app.get("/movies/language/:lang", (req ,res) => {
   const  filtered_movies = movies.filter(function(x){return x.language==req.params.lang});
   console.log("here")
   res.send(filtered_movies);
 })
 
-
+/**
+ * Route URI path to filter to search string in title.
+ * It matches based on contains or includes.
+ */
 app.get("/movies/title/:title", (req ,res) => {
   var filtered_movies = movies.filter(function(x){return x.title.includes(req.params.title) });
   console.log("here")
   res.send(filtered_movies);
 })
 
-
+/**
+ * Start server.
+ */
 app.listen(4000, (req, res) => {
   console.log("server is running in port : 4000");
 });

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Container,Card,Button,FormControl,DropdownButton, Dropdown, Nav} from 'react-bootstrap';
-
+import {Container,Card,Button} from 'react-bootstrap';
 
 const Details = () => {
   let search = window.location.search;

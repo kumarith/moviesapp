@@ -17,6 +17,5 @@ test('renders language filter', () => {
 
 test('details page is loaded with good api call', () => {
   render(<Details url="/details/1" />)
-
   expect(screen.getByRole('div')).toHaveTextContent('Mortal Kombat')
 });
