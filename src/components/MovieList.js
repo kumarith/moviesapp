@@ -15,15 +15,15 @@ const setVoteClass = (vote) => {
 }
 
 
-const MovieList = ({title, poster, overview, rating}) => {
+const MovieList = ({title, poster, overview, rating, id}) => {
   return (
     <div className = 'movie'>
-    <a href="/details">details</a>
+    <a href= {'/details/' + id} >
       <img 
       src = {
         "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"} 
       alt={title} />
-      
+      </a>
       <div className = 'movie-info'>
         <h3>{title}</h3>
         <span  className={`tag ${setVoteClass(rating)}`}>{rating}</span>

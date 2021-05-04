@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Link, Switch, Route} from 'react-router-dom';
 import MovieList from './components/MovieList';
 import Details from './components/Details';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container,Navbar,Form,FormControl,Button,DropdownButton, Dropdown, Nav} from 'react-bootstrap';
+
 
 //api = https://api.themoviedb.org/3/movie/550?api_key=a3dc722615792669aca8014deebeb79a
 //apiurl = https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a3dc722615792669aca8014deebeb79a&page=1
@@ -17,7 +20,7 @@ const FEATURED_API = "http://localhost:3001/movies"
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [language, setLanguage] = useState('');
+  const [languageTerm, setLanguageTerm] = useState('');
 
   useEffect(() => {
     getMovies(FEATURED_API);
@@ -34,7 +37,8 @@ function App() {
     e.preventDefault();
 
     if(searchTerm){
-    getMovies("http://localhost:3001/movies/"+searchTerm)
+      alert("calling")
+    getMovies("http://localhost:3001/movies?title_like="+searchTerm)
       setSearchTerm('');
     }
   }
@@ -44,7 +48,7 @@ function App() {
   }
 
   const changeLanguage = (e) => {
-    setLanguage(e.target.value)
+    getMovies("http://localhost:3001/movies?language="+e)
   }
 
   /*const handleLanguage = (e) => {
@@ -65,13 +69,43 @@ function App() {
       </form>*/
   
   return (
+    
     <>
-    <header>
-      
-      <form onSubmit={handleOnSubmit}>
-        <input  className="search" type="text" placeholder="Search..." value={searchTerm} onChange={handleOnChange}/>
-      </form>
-    </header>
+   
+    <Container>
+    <Navbar expand="lg" variant="light" bg="light">
+    <Navbar.Brand href="#">Movie Search App</Navbar.Brand>
+    <br />
+    <Form inline onSubmit={handleOnSubmit}>
+
+    
+    <DropdownButton  className="ml-auto" id="dropdown-basic-button" title="Language"  onSelect={changeLanguage}>
+    <Dropdown.Item eventKey="danish">danish</Dropdown.Item>
+    <Dropdown.Item eventKey="english">english</Dropdown.Item>
+    <Dropdown.Item eventKey="hindi">hindi</Dropdown.Item>
+    </DropdownButton>
+
+
+
+
+
+    
+
+    <FormControl  className="ml-auto" type="text" placeholder="Search" value={searchTerm} onChange={handleOnChange}  className="mr-sm-2" />
+    
+
+    
+    </Form>
+    </Navbar>
+    </Container>
+    
+
+
+
+     
+        
+     
+    
     <Switch>  
     <Route  path="/details"><Details /></Route>
     <Route path="/"> 
