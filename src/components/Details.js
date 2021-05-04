@@ -21,20 +21,31 @@ const Details = () => {
   }
 
   return (
-    <div className = "card">
-    <Card>
+    <Container >
+    <div style={{display: 'flex', flexDirection: 'row'}} className = "card">
+    <Card  style= {{ width: '38rem' }} >
      <Card.Img variant="top" src={movieDetails.poster} />
      <Card.Body>
        <Card.Title> {movieDetails.title} </Card.Title>
-        <Card.Text><h5>Language:</h5> {movieDetails.language}</Card.Text>
-        <Card.Text><h5>Rating:</h5> {movieDetails.rating}</Card.Text>
-        <Card.Text><h5>Plot:</h5> {movieDetails.plot}</Card.Text>
-        <Card.Text><h5>Location:</h5> {movieDetails.location}</Card.Text>
-        <Card.Text><h5>Overview:</h5> {movieDetails.overview}</Card.Text>
-       <Button href="/movies" variant="primary">Back</Button>
+       
      </Card.Body>
     </Card>
+    <Card style= {{ width: '58rem' }}  >
+    
+    <Card.Body>
+     
+       <Card.Text><h5>Language:</h5> {movieDetails.language}</Card.Text>
+       <Card.Text><h5>Rating:</h5> {movieDetails.rating}</Card.Text>
+       <Card.Text><h5>Plot:</h5> {movieDetails.plot}</Card.Text>
+       <Card.Text><h5>Location:</h5> {movieDetails.location}</Card.Text>
+       <Card.Text><h5>Overview:</h5> {movieDetails.overview}</Card.Text>
+     
+    </Card.Body>
+   </Card>
     </div>
+    <Button href="/movies" variant="primary">Back</Button>
+    </Container>
+
   )
 }
 

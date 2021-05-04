@@ -2,9 +2,6 @@ const express = require ("express");
 const bodyParser = require ("body-parser");
 const cors = require("cors");
 
-
-
-
 const app = express();
 JSON.filter = require('node-json-filter');
 //-------------------------------------------------movies data------------------------------------//
@@ -12,103 +9,103 @@ JSON.filter = require('node-json-filter');
 const movies = [
   {
     "id": 1,
-    "title": "mortal kombat",
+    "title": "Fight Club",
     "language": "english",
     "rating":7.8,
-    "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "plot": "Two imprisoned men bond over a number of years, finding solace and eventual rough nacts of common decency",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
     "location": "US",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion."
   },
   {
     "id": 2,
-    "title": "avengers",
+    "title": "Mortal Kombat",
     "language": "danish",
     "rating":8.8,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjY5NTEzZGItMGY3My00NzE4LThkYTUtYjJkNzk3MDBiMWE3XkEyXkFqcGdeQXVyNzg5MDE1MDk@._V1_SX300.jpg",
     "location": "Denmark",
     "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
   },
   {
     "id": 3,
-    "title": "shark",
+    "title": "Godzilla vs. Kong",
     "language": "german",
     "rating":6.7,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZmYzMzU4NjctNDI0Mi00MGExLWI3ZDQtYzQzYThmYzc2ZmNjXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
     "location": "Germany",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages."
   },
   {
     "id": 4,
-    "title": "flash",
+    "title": "Vanquish",
     "language": "english",
     "rating":5,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZWEzZDdjMjAtOWM1Zi00MTZkLWE5OTEtMDg2YmNmODFjOTBjXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_SX300.jpg",
     "location": "London",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "Victoria is a young mother trying to put her dark past as a Russian drug courier behind her, but retired cop Damon forces Victoria to do his bidding by holding her daughter hostage. Now, Victoria must use guns, guts and a motorcycle to take out a series of violent gangsters—or she may never see her child again."
   },
   {
     "id": 5,
-    "title": "nobody",
+    "title": "Nobody",
     "language": "english",
-    "rating":5.6,
+    "rating":8.5,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTg4ODkzMDQ3Nl5BMl5BanBnXkFtZTgwNTEwMTkxMDE@._V1_SX300.jpg",
     "location": "Texas",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "Hutch Mansell, a suburban dad, overlooked husband, nothing neighbor — a \"nobody.\" When two thieves break into his home one night, Hutch's unknown long-simmering rage is ignited and propels him on a brutal path that will uncover dark secrets he fought to leave behind"
   },
   {
     "id": 6,
-    "title": "big bang",
-    "language": "spanish",
-    "rating":9,
+    "title": "Mugen Train",
+    "language": "japanese",
+    "rating":8.3,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_SX300.jpg",
     "location": "Canada",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "Tanjirō Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Kyōjurō Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!"
   },
   {
     "id": 7,
-    "title": "universe",
+    "title": "The Marksman",
     "language": "french",
-    "rating":9,
+    "rating":7.5,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BODdlNThhMTUtNmU1OS00ZjM3LWE1ZjMtOWViN2RhYWRiZTg5XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_SX300.jpg",
     "location": "France",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "Jim Hanson’s quiet life is suddenly disturbed by two people crossing the US/Mexico border – a woman and her young son – desperate to flee a Mexican cartel. After a shootout leaves the mother dead, Jim becomes the boy’s reluctant defender. He embraces his role as Miguel’s protector and will stop at nothing to get him to safety, as they go on the run from the relentless assassins."
   },
   {
     "id": 8,
-    "title": "waterland",
+    "title": "Zack Snyder's Justice League",
     "language": "hindi",
-    "rating":6,
+    "rating":8.5,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjI3NDg0ZTEtMDEwYS00YWMyLThjYjktMTNlM2NmYjc1OGRiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
     "location": "India",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions."
   },
   {
     "id": 9,
-    "title": "skyland",
+    "title": "Thunder Force",
     "language": "english",
-    "rating":9.9,
+    "rating":5.8,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjAwMDcyNzEwNl5BMl5BanBnXkFtZTcwMDcwMjAyMQ@@._V1_SX300.jpg",
     "location": "US",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "In a world where supervillains are commonplace, two estranged childhood best friends reunite after one devises a treatment that gives them powers to protect their city."
   },
   {
     "id": 10,
-    "title": "wonderland",
+    "title": "Chaos Walking",
     "language": "dutch",
-    "rating":4,
+    "rating":7.3,
     "plot": "Two imprisoned men bond over a number os years, finding solace and eventual rough nacts of common decency",
-    "poster": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYTcxYTk3MWQtZThlMS00ZjQ0LTg0NjktNGVkNWM2MTAyYWJmXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
     "location": "US",
-    "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+    "overview": "Two unlikely companions embark on a perilous adventure through the badlands of an unexplored planet as they try to escape a dangerous and disorienting reality, where all inner thoughts are seen and heard by everyone."
   }
 ]
 
@@ -127,7 +124,6 @@ app.get("/movies", (req, res) => {
 
 app.get("/movie/:id", (req, res) => {
   const movie = movies.find(m => m.id === parseInt(req.params.id));
-  //console.log(movie)
   if(!movie) res.status(404).send("The movie with the ID is NOT FOUND");
   res.send(movie);
   })
@@ -140,7 +136,6 @@ app.get("/movies/language/:lang", (req ,res) => {
 
 app.get("/movies/title/:title", (req ,res) => {
   var filtered_movies = movies.filter(function(x){return x.title.includes(req.params.title) });
- 
   console.log("here")
   res.send(filtered_movies);
 })

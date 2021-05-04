@@ -3,14 +3,13 @@ import {BrowserRouter as Router, Link, Switch, Route} from 'react-router-dom';
 import MovieList from './components/MovieList';
 import Details from './components/Details';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container,Navbar,Form,FormControl,Button,DropdownButton, Dropdown, Nav} from 'react-bootstrap';
+import {Container,Navbar,Form,FormControl,DropdownButton, Dropdown} from 'react-bootstrap';
 
 const FEATURED_API = "http://localhost:4000/movies"
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [languageTerm, setLanguageTerm] = useState('');
 
   useEffect(() => {
     getMovies(FEATURED_API);
@@ -25,12 +24,10 @@ function App() {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-
     if(searchTerm){
-    //getMovies("http://localhost:4000/movies/title/:title"+searchTerm)
     getMovies(`http://localhost:4000/movies/title/${searchTerm}`);
     console.log("searching title----"+searchTerm)
-      setSearchTerm('');
+    setSearchTerm('');
     }
   }
   
@@ -38,35 +35,25 @@ function App() {
     setSearchTerm(e.target.value);
   }
 
-  const changeLanguage = (e) => {
-    getMovies("http://localhost:4000/movies/language/" +e)
+  function getHomepath(){
+    var context = window.location.pathname.substring(0, window.location.pathname.indexOf("/",2)); 
+    var url =window.location.protocol+"//"+ window.location.host +context+"/";
+    return url;
   }
 
-  /*const handleLanguage = (e) => {
-    e.preventDefault();
-
-    if(language){
-    getMovies(SEARCH_API+language)
-      setLanguage('');
-    }
-  }*/
-
-  /*<form onSubmit={handleLanguage}>
-        <select className="filter" value={language} onChange={changeLanguage}>
-          <option  value="english">english</option>
-          <option  value="german">german</option>
-          <option  value="france">france</option>
-        </select>
-      </form>*/
+  const changeLanguage = (e) => {
+    getMovies("http://localhost:4000/movies/language/" +e)
+    if (window.location.href.includes('details'))
+    window.location.href = getHomepath();
+  }
   
   return (
     <>
-   
     <Container>
-    <Navbar expand="lg" variant="light" bg="light">
+    <Navbar className="bg-light justify-content-between"  expand="lg" variant="light" bg="light">
     <Navbar.Brand href="#">Movie Search App</Navbar.Brand>
     <br />
-    <Form inline onSubmit={handleOnSubmit}>
+    <Form  inline onSubmit={handleOnSubmit}>
     
     <DropdownButton  className="ml-auto" id="dropdown-basic-button" title="Language"  onSelect={changeLanguage}>
     <Dropdown.Item eventKey="danish">danish</Dropdown.Item>
@@ -78,11 +65,8 @@ function App() {
     </DropdownButton>
 
     <FormControl  className="ml-auto" type="text" placeholder="Search" value={searchTerm} onChange={handleOnChange}  className="mr-sm-2" />
-    
     </Form>
     </Navbar>
-    </Container>
-
     <Switch>  
     <Route  path="/details">   <Details   />   </Route>
     <Route path="/"> 
@@ -93,6 +77,7 @@ function App() {
     </div>
     </Route>
     </Switch>
+    </Container>
     </>
   );
 }
