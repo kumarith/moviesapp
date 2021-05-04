@@ -8,16 +8,16 @@ Boostrap for styling
 Jest for React component testing.
 
 
-## Instruction
+## Instructions
 npm install
 
 ### Run backend
-/backend node server.js
+cd backend 
+node server.js
 
 This starts api at http://localhost:4000/movies
 
 ### Run UI App
-/ npm run start
+npm run start
 
 This starts UI App at http://localhost:3000/
-
