@@ -1,5 +1,6 @@
-# moviesapp
-React based movies app project 
+# Moviesapp
+React based movies listing app to search, list and view movie database.
+Data base is mocked with JSON Server.
 
 ## Modules used
 Express for server side API
